@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Main{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int n1 = sc.nextInt();
+        int n2 = sc.nextInt();
+        int n3 = sc.nextInt();
+        int val1=1;
+        int val2 = 9;
+        int i=1;
+        while(i<=n){
+            val1 = (val1*10);
+            val2 = (val2*10)+9;
+            i++;
+        }
+        int start = val1/10;
+        int end = val2/10;
+        for(int j=start ;j<=end;j++){
+            if(j%n1==0 && j%n2==0 && j%n3==0){
+                System.out.print(j);
+                break;
+            }
+        }
+        
+        
+    }
+}
