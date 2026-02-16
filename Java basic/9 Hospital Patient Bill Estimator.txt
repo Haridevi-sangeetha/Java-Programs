@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+class BillEstimator{
+    public static void main( String [] args){
+        Scanner  sc = new Scanner(System.in);
+        int RoomchargePerDay = sc.nextInt();
+        int Days = sc.nextInt();
+        int medicinecost = sc.nextInt();
+        int labfees = sc.nextInt();
+        int InsuranceCoverage = sc.nextInt();
+
+        int PayableAmount = (RoomchargePerDay*Days)+medicinecost+labfees-InsuranceCoverage;
+
+        System.out.println("Payable Amount : "+PayableAmount);  
+    }
+}
