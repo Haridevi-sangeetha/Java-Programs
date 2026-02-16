@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+class ServiceEarningsCal{
+    public static void main(){
+        Scanner sc = new Scanner(System.in);
+        int Deliveries = sc.nextInt();
+        int payoutPerDelivery = sc.nextInt();
+        int incentive = sc.nextInt();
+        int fuelCost = sc.nextInt();
+
+        int result = (Deliveries*payoutPerDelivery)+incentive-fuelCost;
+
+        System.out.println("Driver Earnungs : " + result);
+    }
+}
