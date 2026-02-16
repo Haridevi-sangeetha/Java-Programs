@@ -1,0 +1,13 @@
+import java.util.Scanner;
+class Main{
+    public static void main(String [] args){
+        Scanner sc=new Scanner(System.in);
+        int BasicPay=sc.nextInt();
+        int HouseRent=sc.nextInt();
+        int PerformanceBonus=sc.nextInt();
+        int PerfessionalTax=sc.nextInt();
+        int ProvidentFund=sc.nextInt();
+        int cal=((BasicPay+HouseRent+PerformanceBonus)-PerfessionalTax-ProvidentFund);
+        System.out.println(cal);
+    }
+}
