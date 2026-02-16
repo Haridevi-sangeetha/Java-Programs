@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+class MachinePoCal{
+    public static void main(){
+        Scanner sc = new Scanner(System.in);
+        int RodsPerHour = sc.nextInt();
+        int HoursWorked = sc.nextInt();
+        int OvertimeRods = sc.nextInt();
+        int rejectedRods = sc . nextInt();
+
+        int cal = (RodsPerHour*HoursWorked)+OvertimeRods-rejectedRods;
+
+        System.out.println(cal);
+    }
+}
