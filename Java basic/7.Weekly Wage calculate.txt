@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+class Final{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int Days_worked = sc.nextInt();
+        int wagePerday = sc.nextInt();
+        int OvertimeBonus = sc.nextInt();
+        int maintaincharge = sc.nextInt();
+
+        int cal = Days_worked*wagePerday;
+        int bonus = cal+OvertimeBonus;
+        int result = bonus - maintaincharge;
+
+        System.out.println(result);
+    }
+}
