@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+class Grocery{
+    public static void main(String [] args){
+        Scanner sc= new Scanner(System.in);
+        int Sales=sc.nextInt();
+        int Discount=sc.nextInt();
+        int Gst=sc.nextInt();
+
+        double Discount_cal=(Sales-(Sales*(Discount/100.0)));
+
+        double GST_add=(Discount_cal)+(Discount_cal*(Gst/100.0));
+
+        System.out.printf("%.0f%n",GST_add);
+    }
+}
