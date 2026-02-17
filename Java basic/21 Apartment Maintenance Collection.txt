@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+class MaintenanceCollection{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int MaintenanceCollection=sc.nextInt();
+        int ParkingFees=sc.nextInt();
+        int Hallbooking = sc.nextInt();
+        int SecuritySalary = sc.nextInt();
+        int ElectricityBill = sc.nextInt();
+        int Cleaningcost  = sc.nextInt(); 
+
+        int Balance = MaintenanceCollection + ParkingFees + Hallbooking -
+        SecuritySalary - ElectricityBill - Cleaningcost;
+
+        System.out.println("Raming Balance : " + Balance);
+    }
+}
