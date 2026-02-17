@@ -1,0 +1,18 @@
+t java.util.Scanner;
+
+class BillSplitter{
+    public static void main(String [] args){
+        Scanner sc=new Scanner(System.in);
+        int Totalill = sc.nextInt();
+        int Service = sc.nextInt();
+        int Gst = sc.nextInt();
+        int No_of_People = sc.nextInt();
+
+        int Service_Per=(Totalill*Service)/100;
+        int Gst_Per=(Totalill*Gst)/100;
+
+        double Total=(Totalill+Service_Per+Gst_Per)/No_of_People;
+
+        System.out.println("Amount Per Person : " + Total);
+    }
+}
