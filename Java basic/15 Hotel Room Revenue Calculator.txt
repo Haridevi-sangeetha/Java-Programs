@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+class RoomRevenue {
+    public static void main(String [] args){
+        Scanner  sc = new Scanner(System.in);
+        int roomsBooked  = sc.nextInt();
+        int pricePerRoom = sc.nextInt();
+        int serviceCharges = sc.nextInt();
+        int commission = sc.nextInt();
+
+        int Revenue = (roomsBooked * pricePerRoom) + serviceCharges - commission;
+
+        System.out.println("Total Revenue : " + Revenue);
+    }
+}
