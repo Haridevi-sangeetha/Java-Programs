@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+class ScholarshipEligibility{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int Tutionfees = sc.nextInt();
+        int Scholarship = sc.nextInt();
+        int ExamFee = sc.nextInt();
+        int LibraryFee = sc.nextInt();
+
+        int Scholarship_per = (Tutionfees * Scholarship/100);
+
+        int  Net_Tution = Tutionfees - Scholarship_per;
+
+
+        int Final_Pay_Fee = Net_Tution + ExamFee + LibraryFee;
+
+        System.out.println(Final_Pay_Fee);
+
+    }
+}
