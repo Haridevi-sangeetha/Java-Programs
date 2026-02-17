@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+class SmartCity{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int residentialUsage =  sc.nextInt();
+        int residentialRate=  sc.nextInt();
+        int commercialUsage  =  sc.nextInt(); 
+        int commercialRate =  sc.nextInt();
+        int connectionFees =  sc.nextInt();
+        int penaltyCollection =  sc.nextInt();
+        int pipelineMaintenance =  sc.nextInt();
+        int treatmentCost =  sc.nextInt();
+
+        int Net_Water_Revenue = (residentialUsage * residentialRate) + (commercialUsage * commercialRate) + connectionFees+ penaltyCollection - pipelineMaintenance - treatmentCost;
+
+
+        System.out.println("Net Water Revenue : " + Net_Water_Revenue);
+
+    }
+}
