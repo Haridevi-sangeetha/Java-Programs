@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+class RentalProfit{
+    public static void main(String [] args){
+        Scanner sc=new Scanner(System.in);
+        int RentalDays=sc.nextInt();
+        int RentPerDay=sc.nextInt();
+        int LateCharges = sc.nextInt();
+        int FuelCost = sc.nextInt();
+        int maintenanceCost = sc.nextInt();
+
+        int Profit=(RentalDays*RentPerDay)+LateCharges-FuelCost-maintenanceCost;
+
+        System.out.println("New Profit : "+Profit);
+    }
+}
