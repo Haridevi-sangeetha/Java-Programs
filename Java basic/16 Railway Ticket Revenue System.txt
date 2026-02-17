@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+class TicketRevenue{
+    public static void main( String [] args){
+        Scanner sc = new Scanner (System.in);
+        int generalPassengers  = sc.nextInt();
+        int  generalFare = sc.nextInt(); 
+        int acPassengers = sc.nextInt();
+        int acFare = sc.nextInt();
+        int platformCollection = sc.nextInt();
+        int maintenanceCost = sc.nextInt();
+        int fuelCost = sc.nextInt();
+
+        int Revenue = (generalPassengers * generalFare) + (acPassengers * acFare) + (platformCollection) - (maintenanceCost) -  (fuelCost);
+
+        System.out.println("New Railway Revenue : " + Revenue);
+
+    }
+}
