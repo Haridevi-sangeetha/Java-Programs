@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+
+class FarmYield{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int yieldPerAcre  = sc.nextInt();
+        int acres = sc.nextInt();
+        int extraYield = sc.nextInt();
+        int damagedCrops = sc.nextInt();
+
+        int Marketable_yield = (yieldPerAcre * acres) + extraYield - damagedCrops;
+
+        System.out.println("Marketable Yield : "+ Marketable_yield);
+        
+    }
+}
