@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+class PublishingCost{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int Copies = sc.nextInt();
+        int CostPerCopy = sc.nextInt();
+        int EditingCharge = sc.nextInt();
+        int DesignCharge  = sc.nextInt();
+        int DistriutorCommission = sc.nextInt();
+        int MarketingExpense  = sc.nextInt();
+
+        int Profit = (Copies*CostPerCopy)+EditingCharge+DesignCharge-DistriutorCommission-MarketingExpense;
+
+        System.out.println("Publishing Profit : " + Profit);
+    }
+}
