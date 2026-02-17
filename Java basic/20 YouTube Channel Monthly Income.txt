@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+class MonthlyIncome{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int AdRevenue = sc.nextInt();
+        int sponsorshipIncome = sc.nextInt();
+        int affiliateIncome = sc.nextInt();
+        int tax = sc.nextInt();
+        int  ProductionCost = sc.nextInt();
+        int FinalIncome = ((AdRevenue)+(sponsorshipIncome)+(affiliateIncome)-(tax)-(ProductionCost));
+        System.out.println("Final Youtube Income : "+FinalIncome);
+    }
+    
+}
