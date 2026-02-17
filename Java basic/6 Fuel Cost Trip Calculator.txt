@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+class FuelCost{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int Distance = sc.nextInt();
+        int Mileage =  sc.nextInt();
+        int FuelPrice = sc.nextInt();
+        int Tollcharge = sc.nextInt();
+
+        int Toal_Trip_Cost = (Distance/Mileage*FuelPrice)+Tollcharge;
+
+        System.out.println("Toal_Trip_Cost : " + Toal_Trip_Cost); 
+    }
+}
