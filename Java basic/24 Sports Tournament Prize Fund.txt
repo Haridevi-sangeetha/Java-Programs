@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+class TournamentPrize{
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        int TeamRegistration = sc.nextInt();
+        int boardCastingRights = sc.nextInt();
+        int Sponsorship = sc.nextInt();
+        int PrizeMoney = sc.nextInt();
+        int StadiumRent = sc.nextInt();
+        int AdvertisingCost = sc.nextInt();
+
+        int Remaing_Fund = TeamRegistration+boardCastingRights+Sponsorship-PrizeMoney-StadiumRent-AdvertisingCost;
+
+        System.out.println("Remaing Tournament Fund : " + Remaing_Fund); 
+    }
+}
