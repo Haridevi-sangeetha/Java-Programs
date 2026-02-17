@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+class CargoRevenue{
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        int Weight = sc.nextInt();
+        int RatePerKg = sc.nextInt();
+        int PriorityCharges = sc.nextInt();
+        int Insurance = sc.nextInt();
+        int HandlingCharges = sc.nextInt();
+        int FuleSurcharge = sc.nextInt();
+        
+        int Cargo_Revenue = (Weight*RatePerKg)+PriorityCharges+Insurance-HandlingCharges-FuleSurcharge;
+        
+        System.out.println("Cargo Revenue : " + Cargo_Revenue);
+    }
+}
