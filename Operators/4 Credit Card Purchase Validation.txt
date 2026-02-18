@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+class CardPurchase{
+    public static void main(String [] args){
+    Scanner sc = new Scanner(System.in);
+    int CreditLimit = sc.nextInt();
+    int PurchasedAmount = sc.nextInt();
+    int CardBlocked = sc.nextInt();
+
+    if(PurchasedAmount<=CreditLimit && CardBlocked == 0){
+        System.out.println("Approved");
+    }
+    else{
+        System.out.println("Declined");
+    }
+    }
+}
