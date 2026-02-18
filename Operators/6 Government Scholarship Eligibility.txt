@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+class ScholarshipEligibility{
+    public static void main(String [] args){
+        Scanner sc = new Scanner (System.in);
+        int Family_Income = sc.nextInt();
+        int Percentage = sc.nextInt();
+
+        if(Family_Income<200000 && Percentage>=75){
+            System.out.println("Granted");
+        }
+        else{
+            System.out.println("Not Granted");
+        }
+    }
+}
