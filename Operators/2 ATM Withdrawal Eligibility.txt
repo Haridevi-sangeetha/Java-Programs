@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+class ATMWithdrawal{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int AccountBalance = sc.nextInt();
+        int WithdrawalAmount = sc.nextInt();
+        int Dailylimit = sc.nextInt();
+
+        if(WithdrawalAmount<=AccountBalance && WithdrawalAmount<=Dailylimit){
+            System.out.println("Approved");
+        }
+        else{
+            System.out.println("Declined");
+        }
+    }
