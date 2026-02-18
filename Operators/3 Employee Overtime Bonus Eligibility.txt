@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+class OvertimeBonu{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int WorkingHours = sc.nextInt();
+        int AttendencePercentage = sc.nextInt();
+        if(WorkingHours>40 && AttendencePercentage>90){
+            System.out.println("Eligible");
+        }
+        else{
+            System.out.println("Not Eligible");
+        }
+    }
+}
