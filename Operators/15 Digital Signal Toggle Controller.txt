@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+class ToggleController{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int SignalValue = sc.nextInt();
+        int ToggleMask = sc.nextInt();
+
+        int cal = SignalValue ^ ToggleMask;
+
+        System.out.println(cal);
+    }
+}
