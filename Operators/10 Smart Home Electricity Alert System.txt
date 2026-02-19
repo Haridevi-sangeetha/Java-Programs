@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+class ElectricityAlert{
+    public static  void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int UnitsConsumed = sc.nextInt();
+        int VoltageFluctuation = sc.nextInt();
+
+        if(UnitsConsumed>500 || VoltageFluctuation == 1){
+            System.out.println("Alert Triggered");
+        } 
+        else{
+            System.out.println("Normal Usage");
+        }
+    }
+}
