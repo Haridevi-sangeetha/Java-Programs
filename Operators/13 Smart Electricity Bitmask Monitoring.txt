@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+class ElectricityBitmask{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int ConnectionValue = sc.nextInt();
+        int ApplianceMask = sc.nextInt();
+
+        int cal = ConnectionValue & ApplianceMask;
+        if(cal == 0){
+            System.out.println("Inactive");
+        }
+        else{
+            System.out.println("Active");
+        }
+    }
+}
