@@ -1,0 +1,12 @@
+
+class SizeReduction{
+    public static void main(String [] agrs){
+        Scanner sc = new Scanner(System.in);
+        int FileSize = sc.nextInt();
+        int CompressionCycles = sc.nextInt();
+
+        int cal = FileSize>>CompressionCycles;
+
+        System.out.println(cal);
+    }
+}
