@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+class AgeAccess{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int age = sc.nextInt();
+        int IdProof = sc.nextInt();
+
+        if(age>=18 && IdProof==1){
+            System.out.println("Entry Allowed");
+        }
+        else{
+            System.out.println("Entry Denied");
+        }
+    }
+}
