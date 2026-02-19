@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+class BoxCapacity{
+    public static void main(String [] agrs){
+        Scanner sc = new Scanner(System.in);
+        int baseoxes = sc.nextInt();
+        int Levels = sc.nextInt();
+
+        int cal = baseoxes<<Levels;
+        
+        System.out.println(cal);
+    }
+}
