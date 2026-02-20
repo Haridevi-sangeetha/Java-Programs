@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+class PerformanceBonus{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int PerformanceRating = sc.nextInt();
+        int YearofService = sc.nextInt();
+        String Department = sc.next();
+        float DoubleBaseSalary = sc.nextFloat();
+        int Bonus = 0;
+        if(PerformanceRating >= 3){
+            if("Critical".equals(Department)){
+                if(PerformanceRating==5 && YearofService>=5){
+                    Bonus = 25;
+                }
+                else if(PerformanceRating==4 && YearofService >=10){
+                    Bonus = 22;
+                }
+                else if (PerformanceRating == 4 && YearofService<10){
+                    Bonus = 15;
+                }
+                else if (PerformanceRating == 3 ){
+                    Bonus = 10;
+                }
+            }
+            else if("Non-Critical".equals(Department)){
+                if(PerformanceRating == 5){
+                    Bonus = 18;
+                }
+                else if(PerformanceRating ==4){
+                    Bonus = 12;
+                }
+                else if(PerformanceRating ==3){
+                    Bonus = 8;
+                }
+            }
+        }
+
+        System.out.println("Performance Rating : " + PerformanceRating);
+        System.out.println("Years of Service : " + YearofService);
+        System.out.println("Department : "+Department);
+        System.out.println("Bonus Percentage : " + Bonus+"%");
+        double cal = DoubleBaseSalary*(Bonus/100.0);
+        System.out.println("Bonus Amount : $" + cal);
+        if(PerformanceRating>=3){
+            System.out.println("Status : Eligible");
+        }
+        else{
+            System.out.println("Status : Not Eligible");
+        }
+    }
+}
