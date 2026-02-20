@@ -1,0 +1,254 @@
+import java.util.Scanner;
+
+class DynamicDiscount{
+    public static void main(String [] args){
+    Scanner sc = new Scanner(System.in);
+    String loyalty  = sc.next();
+    double CartValue = sc.nextDouble();
+    String ProductCategory = sc.next();
+    String MembershipStatus = sc.next();
+    int discount = 0;
+    int Additionaldiscount = 0;
+    int bonus = 0;
+    if("Bronze".equals(loyalty)){
+        discount = 5;
+        if("Fashion".equals(ProductCategory)){
+            bonus=3;
+            if(CartValue>=500 && CartValue<=999){
+                Additionaldiscount=3;
+            }
+            else if(CartValue>=1000 && CartValue<=1999){
+                Additionaldiscount=5;
+            }
+            else if(CartValue>=2000){
+                Additionaldiscount=7;
+            }
+        }
+        else if("Electronics".equals(ProductCategory)){
+            if("Prime".equals(MembershipStatus)){
+                bonus=5;
+            }
+            if(CartValue>=500 && CartValue<=999){
+                Additionaldiscount=3;
+            }
+            else if(CartValue>=1000 && CartValue<=1999){
+                Additionaldiscount=5;
+            }
+            else if(CartValue>=2000){
+                Additionaldiscount=7;
+            }
+        }
+        else if("Books".equals(ProductCategory)){
+            if("Prime".equals(MembershipStatus)){
+                bonus=5;
+            }
+            if(CartValue>=500 && CartValue<=999){
+                Additionaldiscount=3;
+            }
+            else if(CartValue>=1000 && CartValue<=1999){
+                Additionaldiscount=5;
+            }
+            else if(CartValue>=2000){
+                Additionaldiscount=7;
+            }
+        }
+        else if("Groceries".equals(MembershipStatus)){
+            if(CartValue>300){
+                bonus=2;
+            }
+            if(CartValue>=500 && CartValue<=999){
+                Additionaldiscount=3;
+            }
+            else if(CartValue>=1000 && CartValue<=1999){
+                Additionaldiscount=5;
+            }
+            else if(CartValue>=2000){
+                Additionaldiscount=7;
+            }
+        }
+    }
+    if("Silver".equals(loyalty)){
+        discount = 8;
+        if("Fashion".equals(ProductCategory)){
+            bonus=3;
+            if(CartValue>=500 && CartValue<=999){
+                Additionaldiscount=3;
+            }
+            else if(CartValue>=1000 && CartValue<=1999){
+                Additionaldiscount=5;
+            }
+            else if(CartValue>=2000){
+                Additionaldiscount=7;
+            }
+        }
+        else if("Electronics".equals(ProductCategory)){
+            if("Prime".equals(MembershipStatus)){
+                bonus=5;
+            }
+            if(CartValue>=500 && CartValue<=999){
+                Additionaldiscount=3;
+            }
+            else if(CartValue>=1000 && CartValue<=1999){
+                Additionaldiscount=5;
+            }
+            else if(CartValue>=2000){
+                Additionaldiscount=7;
+            }
+        }
+        else if("Books".equals(ProductCategory)){
+            if("Prime".equals(MembershipStatus)){
+                bonus=5;
+            }
+            if(CartValue>=500 && CartValue<=999){
+                Additionaldiscount=3;
+            }
+            else if(CartValue>=1000 && CartValue<=1999){
+                Additionaldiscount=5;
+            }
+            else if(CartValue>=2000){
+                Additionaldiscount=7;
+            }
+        }
+        else if("Groceries".equals(MembershipStatus)){
+            if(CartValue>300){
+                bonus=2;
+            }
+            if(CartValue>=500 && CartValue<=999){
+                Additionaldiscount=3;
+            }
+            else if(CartValue>=1000 && CartValue<=1999){
+                Additionaldiscount=5;
+            }
+            else if(CartValue>=2000){
+                Additionaldiscount=7;
+            }
+        }
+    }
+    if("Gold".equals(loyalty)){
+        discount =12;
+        if("Fashion".equals(ProductCategory)){
+            bonus=3;
+            if(CartValue>=500 && CartValue<=999){
+                Additionaldiscount=3;
+            }
+            else if(CartValue>=1000 && CartValue<=1999){
+                Additionaldiscount=5;
+            }
+            else if(CartValue>=2000){
+                Additionaldiscount=7;
+            }
+        }
+        else if("Electronics".equals(ProductCategory)){
+            if("Prime".equals(MembershipStatus)){
+                bonus=5;
+            }
+            if(CartValue>=500 && CartValue<=999){
+                Additionaldiscount=3;
+            }
+            else if(CartValue>=1000 && CartValue<=1999){
+                Additionaldiscount=5;
+            }
+            else if(CartValue>=2000){
+                Additionaldiscount=7;
+            }
+        }
+        else if("Books".equals(ProductCategory)){
+            if("Prime".equals(MembershipStatus)){
+                bonus=5;
+            }
+            if(CartValue>=500 && CartValue<=999){
+                Additionaldiscount=3;
+            }
+            else if(CartValue>=1000 && CartValue<=1999){
+                Additionaldiscount=5;
+            }
+            else if(CartValue>=2000){
+                Additionaldiscount=7;
+            }
+        }
+        else if("Groceries".equals(ProductCategory)){
+                bonus=2;
+            if(CartValue>=500 && CartValue<=999){
+                Additionaldiscount=3;
+            }
+            else if(CartValue>=1000 && CartValue<=1999){
+                Additionaldiscount=5;
+            }
+            else if(CartValue>=2000){
+                Additionaldiscount=7;
+            }
+        }
+    }
+    if("Platinum".equals(loyalty)){
+        discount = 15;
+        if("Fashion".equals(ProductCategory)){
+            bonus=3;
+            if(CartValue>=500 && CartValue<=999){
+                Additionaldiscount=3;
+            }
+            else if(CartValue>=1000 && CartValue<=1999){
+                Additionaldiscount=5;
+            }
+            else if(CartValue>=2000){
+                Additionaldiscount=7;
+            }
+        }
+        else if("Electronics".equals(ProductCategory)){
+            if("Prime".equals(MembershipStatus)){
+                bonus=5;
+            }
+            if(CartValue>=500 && CartValue<=999){
+                Additionaldiscount=3;
+            }
+            else if(CartValue>=1000 && CartValue<=1999){
+                Additionaldiscount=5;
+            }
+            else if(CartValue>=2000){
+                Additionaldiscount=7;
+            }
+        }
+        else if("Books".equals(ProductCategory)){
+            if("Prime".equals(MembershipStatus)){
+                bonus=5;
+            }
+            if(CartValue>=500 && CartValue<=999){
+                Additionaldiscount=3;
+            }
+            else if(CartValue>=1000 && CartValue<=1999){
+                Additionaldiscount=5;
+            }
+            else if(CartValue>=2000){
+                Additionaldiscount=7;
+            }
+        }
+        else if("Groceries".equals(MembershipStatus)){
+            if(CartValue>300){
+                bonus=2;
+            }
+            if(CartValue>=500 && CartValue<=999){
+                Additionaldiscount=3;
+            }
+            else if(CartValue>=1000 && CartValue<=1999){
+                Additionaldiscount=5;
+            }
+            else if(CartValue>=2000){
+                Additionaldiscount=7;
+            }
+        }
+    }
+    
+    int Final_discount=Additionaldiscount+bonus;
+    int TotalDiscount = (discount+Additionaldiscount+bonus);
+    double FinalPrice = (CartValue)-((CartValue)*TotalDiscount/100);
+    double saving = (CartValue-FinalPrice);
+    System.out.println("Loyalty Tier : " + loyalty);
+    System.out.println("Card Value : $" + CartValue);
+    System.out.println("Product Category : " + ProductCategory);
+    System.out.println("Membership : " + MembershipStatus);
+    System.out.println("Base Discount : "+discount+"%");
+    System.out.println("Additional Discount : " +Final_discount+"%");
+    System.out.println("Total Discount: " + TotalDiscount+"%");
+    System.out.println("Final Price : $" + FinalPrice);
+    System.out.println("Savings : $"+saving);
+    }
+}
