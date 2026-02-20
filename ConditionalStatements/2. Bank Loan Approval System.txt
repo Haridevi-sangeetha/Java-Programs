@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+class LoanApproval{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int creditScore = sc.nextInt();
+        double annualIncome = sc.nextDouble();
+        double debtToIncomeRatio = sc.nextDouble();
+        String LoanType = sc.next();
+
+        System.out.println("Credit Score : " + creditScore);
+        System.out.println("Annual Income : $" + annualIncome);
+        System.out.println("Det-to-Income : " + debtToIncomeRatio + "%");
+        System.out.println("LoanType : " + LoanType);
+         
+
+        double score = 0;
+        if(creditScore<600 && debtToIncomeRatio>50){
+            System.out.println("Decision : Rejected");
+            System.out.println("Maximum Loan Amount: $0.0");
+        }
+        else if("Home".equals(LoanType)){
+            if(creditScore >=750 && debtToIncomeRatio<=30){
+                score=(creditScore) + (creditScore*(debtToIncomeRatio/100));
+                System.out.println("Decision : Approved");
+                System.out.println("Maximum Loan Amount: $" +annualIncome*4);
+            }
+            else if((creditScore>=700 || creditScore<=749 )&& (debtToIncomeRatio>=31 || debtToIncomeRatio<=40)){
+                score = creditScore + debtToIncomeRatio;
+                System.out.println("Decision : Needs Review");
+                System.out.println("Maximum Loan Amount: $" +annualIncome*3);
+
+            }
+        }
+        else if("Personal".equals(LoanType)){
+            if(creditScore>=750 && debtToIncomeRatio<=30){
+                score=creditScore+debtToIncomeRatio;
+                System.out.println("Decision : Approved");
+                System.out.println("Maximum Loan Amount: $" +annualIncome*1);
+            }
+            else if((creditScore>=650 && creditScore<=699) && (debtToIncomeRatio>=31 && debtToIncomeRatio<=40)){
+                score = creditScore + debtToIncomeRatio;
+                System.out.println("Decision : Needs review");
+                System.out.println("Maximum Loan Amount: $" +annualIncome*0.5);
+            }
+        }
+        else if("Business".equals(LoanType)){
+            if(((creditScore>=750) || (creditScore>=650 || creditScore<=699) )&&((debtToIncomeRatio<=30) || (debtToIncomeRatio>=31 && debtToIncomeRatio<=40))){
+                score = creditScore+debtToIncomeRatio;
+                System.out.println("Decision : Approves");
+                System.out.println("Maximum Loan Amount: $" +annualIncome*3);
+            }
+        }
+    }
+}
