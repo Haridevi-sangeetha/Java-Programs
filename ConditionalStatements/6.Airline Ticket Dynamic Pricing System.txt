@@ -1,0 +1,75 @@
+import java.util.Scanner;
+
+class DynamicPricing{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        String classBooking = sc.next();
+        int Days = sc.nextInt();
+        double SeatAvailability = sc.nextDouble();
+        String RouteType = sc.next();
+
+        System.out.println("Booking Class : "+classBooking);
+        System.out.println("Days Until Departure "+Days);
+        System.out.println("Seat Availability : "+SeatAvailability);
+        System.out.println("Route Type :" +RouteType);
+        int price=0;
+         if("Economy".equals(classBooking)){
+            if("Domestic".equals(RouteType)){
+                price = 200;   
+            }
+            else if("International-Short".equals(RouteType)){
+                price = 500;   
+            }
+            else if("International-Long".equals(RouteType)){
+                price = 800;   
+            }
+         }
+         else if("Business".equals(classBooking)){
+            if("Domestic".equals(RouteType)){
+                price = 600;   
+            }
+            else if("International-Short".equals(RouteType)){
+                price = 1500;   
+            }
+            else if("International-Long".equals(RouteType)){
+                price = 2500;   
+            }
+         }
+        if("First".equals(classBooking)){
+            if("Domestic".equals(RouteType)){
+                price = 1000;   
+            }
+            else if("International-Short".equals(RouteType)){
+                price = 3000;   
+            }
+            else if("International-Long".equals(RouteType)){
+                price = 5000;   
+            }
+         }
+         System.out.println("Base Price : $" + price);
+        if(SeatAvailability<30 && Days<14){
+            System.out.println("Demand Multiplier: 1.8x"  );
+            double cal = price*1.8;
+            System.out.println("Demand Multiplier: $"+cal);
+            System.out.println("Pricing Category: High Demand");
+        }
+        else if(SeatAvailability<50 && Days<30){
+            System.out.println("Demand Multiplier: 1.5");
+            double cal = price*1.5;
+            System.out.println("Demand Multiplier: "+cal);
+            System.out.println("Pricing Category: High Demand");
+        }
+        else if(SeatAvailability<60 && (Days>=30 && Days<=60)){
+            System.out.println("Demand Multiplier: 1.0x" );
+            double cal = price*1.0;
+            System.out.println("Demand Multiplier: "+cal);
+            System.out.println("Pricing Category: Moderate");
+        }
+        else if(SeatAvailability>=60 && Days>60){
+            System.out.println("Demand Multiplier: $0.8x");
+            double cal = price*0.8;
+            System.out.println("Demand Multiplier: "+cal);
+            System.out.println("Pricing Category: Low Demand");
+        }
+    }
+ }
