@@ -1,0 +1,99 @@
+import java.util.Scanner;
+
+class ParkingFee {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String zone = sc.nextLine();
+        double hours = sc.nextDouble();
+        sc.nextLine();
+        String vehicle = sc.nextLine();
+        String membership = sc.nextLine();
+
+        double baseRate = 5.0;
+        int zonePremium = 0;
+        double vehicleSurcharge = 0;
+        int discount = 0;
+        double dailyCap = Double.MAX_VALUE;
+        String capApplied = "No";
+        String category = "";
+
+        
+        if (zone.equalsIgnoreCase("Downtown")) {
+            zonePremium = 50;
+            dailyCap = 150;
+            category = "Premium";
+        }
+        else if (zone.equalsIgnoreCase("Business-District")) {
+            zonePremium = 30;
+            dailyCap = 120;
+            category = "Premium";
+        }
+        else if (zone.equalsIgnoreCase("Residential")) {
+            zonePremium = 0;
+            dailyCap = 60;
+            category = "Standard";
+        }
+        else if (zone.equalsIgnoreCase("Airport")) {
+            zonePremium = 100;
+            dailyCap = 180;
+            category = "Luxury";
+        }
+
+
+        if (vehicle.equalsIgnoreCase("Motorcycle"))
+            vehicleSurcharge = -2;
+        else if (vehicle.equalsIgnoreCase("Compact"))
+            vehicleSurcharge = 0;
+        else if (vehicle.equalsIgnoreCase("Sedan"))
+            vehicleSurcharge = 0;
+        else if (vehicle.equalsIgnoreCase("SUV"))
+            vehicleSurcharge = 3;
+        else if (vehicle.equalsIgnoreCase("Oversized"))
+            vehicleSurcharge = 5;
+
+        if (membership.equalsIgnoreCase("None"))
+            discount = 0;
+        else if (membership.equalsIgnoreCase("Monthly"))
+            discount = 20;
+        else if (membership.equalsIgnoreCase("Annual"))
+            discount = 25;
+        else if (membership.equalsIgnoreCase("VIP"))
+            discount = 30;
+
+        
+        double hourlyRate =
+                baseRate * (1 + zonePremium / 100.0)
+                + vehicleSurcharge;
+
+        double calculatedFee = hourlyRate * hours;
+
+    
+        double discountedFee =
+                calculatedFee * (1 - discount / 100.0);
+
+        
+        double finalFee = discountedFee;
+
+        if (hours >= 24) {
+            if (discountedFee > dailyCap) {
+                finalFee = dailyCap;
+                capApplied = "Yes";
+            }
+        }
+
+        
+        System.out.println("Location Zone: " + zone);
+        System.out.println("Parking Duration: " + hours + " hours");
+        System.out.println("Vehicle Type: " + vehicle);
+        System.out.println("Membership Status: " + membership);
+        System.out.println("Base Hourly Rate: $" + baseRate);
+        System.out.println("Zone Premium: " + zonePremium + "%");
+        System.out.println("Vehicle Size Surcharge: $" + vehicleSurcharge);
+        System.out.println("Membership Discount: " + discount + "%");
+        System.out.println("Total Parking Fee: $" + finalFee);
+        System.out.println("Daily Cap Applied: " + capApplied);
+        System.out.println("Rate Category: " + category);
+    }
+}
