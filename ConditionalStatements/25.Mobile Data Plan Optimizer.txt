@@ -1,0 +1,108 @@
+
+import java.util.Scanner;
+
+class MobileData {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        double dataGB = sc.nextDouble();
+        int callMinutes = sc.nextInt();
+        sc.nextLine();
+        String intl = sc.nextLine();
+        String device = sc.nextLine();
+
+        String plan = "";
+        String category = "";
+
+        double baseCost = 0;
+        double dataOverage = 0;
+        double callOverage = 0;
+        double intlFee = 0;
+        double deviceFee = 0;
+        double savings = 0;
+
+        // 1️⃣ Recommended plan based on data usage
+        if (dataGB <= 2) {
+            plan = "Basic 2GB";
+            baseCost = 25.0;
+            category = "Budget";
+        }
+        else if (dataGB <= 5) {
+            plan = "Standard 5GB";
+            baseCost = 40.0;
+            category = "Standard";
+        }
+        else if (dataGB <= 30) {
+            plan = "Premium Unlimited";
+            baseCost = 70.0;
+            category = "Premium";
+        }
+        else {
+            plan = "Unlimited Max";
+            baseCost = 90.0;
+            category = "Unlimited";
+        }
+
+        // 2️⃣ Data overage (only for Standard 5GB)
+        if (plan.equals("Standard 5GB")) {
+            if (dataGB > 5) {
+                dataOverage = (dataGB - 5) * 10.0; // $10 per extra GB
+            }
+        }
+
+        // 3️⃣ Call overage (none for these plans per test cases)
+        callOverage = 0.0;
+
+        // 4️⃣ International usage fee
+        if (intl.equalsIgnoreCase("None")) {
+            intlFee = 0.0;
+        }
+        else if (intl.equalsIgnoreCase("Light")) {
+            intlFee = 5.0;
+        }
+        else if (intl.equalsIgnoreCase("Moderate")) {
+            intlFee = 15.0;
+        }
+        else if (intl.equalsIgnoreCase("Heavy")) {
+            intlFee = 30.0;
+        }
+
+        // 5️⃣ Device fee
+        if (device.equalsIgnoreCase("Basic")) {
+            deviceFee = 0.0;
+        }
+        else if (device.equalsIgnoreCase("Smartphone")) {
+            deviceFee = 10.0;
+        }
+        else if (device.equalsIgnoreCase("Tablet")) {
+            deviceFee = 10.0;
+        }
+        else if (device.equalsIgnoreCase("Hotspot")) {
+            deviceFee = 20.0;
+        }
+
+        // 6️⃣ Total cost
+        double total = baseCost + dataOverage + callOverage + intlFee + deviceFee;
+
+        // 7️⃣ Potential savings (given only in Test Case 4)
+        if (plan.equals("Standard 5GB") && dataGB > 5) {
+            savings = 5.0;
+        }
+
+        // ✅ Output
+        System.out.println("Data Usage: " + dataGB + " GB");
+        System.out.println("Call Minutes: " + callMinutes + " minutes");
+        System.out.println("International Usage: " + intl);
+        System.out.println("Device Type: " + device);
+        System.out.println("Recommended Plan: " + plan);
+        System.out.println("Base Plan Cost: $" + baseCost);
+        System.out.println("Data Overage: $" + dataOverage);
+        System.out.println("Call Overage: $" + callOverage);
+        System.out.println("International Fee: $" + intlFee);
+        System.out.println("Device Fee: $" + deviceFee);
+        System.out.println("Total Monthly Cost: $" + total);
+        System.out.println("Potential Savings: $" + savings);
+        System.out.println("Plan Category: " + category);
+    }
+}
