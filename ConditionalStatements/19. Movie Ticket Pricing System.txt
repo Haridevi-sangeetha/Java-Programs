@@ -1,0 +1,82 @@
+import java.util.Scanner;
+
+class TicketPricing {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String format = sc.nextLine();
+        String time = sc.nextLine();
+        String seat = sc.nextLine();
+        String customer = sc.nextLine();
+
+        double basePrice = 12.0;
+        double formatFee = 0;
+        double seatFee = 0;
+        int timeAdjustment = 0;
+        int discount = 0;
+        String voucher = "No";
+        String category = "";
+
+    
+        if (format.equalsIgnoreCase("2D")) formatFee = 0;
+        else if (format.equalsIgnoreCase("3D")) formatFee = 5;
+        else if (format.equalsIgnoreCase("IMAX")) formatFee = 8;
+        else if (format.equalsIgnoreCase("4DX")) formatFee = 10;
+
+        
+        if (seat.equalsIgnoreCase("Standard")) seatFee = 0;
+        else if (seat.equalsIgnoreCase("Premium")) seatFee = 4;
+        else if (seat.equalsIgnoreCase("Recliner")) seatFee = 7;
+
+        
+        if (time.equalsIgnoreCase("Matinee")) timeAdjustment = -30;
+        else if (time.equalsIgnoreCase("Evening")) timeAdjustment = 0;
+        else if (time.equalsIgnoreCase("Prime-Time")) timeAdjustment = 20;
+        else if (time.equalsIgnoreCase("Late-Night")) timeAdjustment = -20;
+
+        
+        if (customer.equalsIgnoreCase("Adult")) discount = 0;
+        else if (customer.equalsIgnoreCase("Senior")) discount = 25;
+        else if (customer.equalsIgnoreCase("Student")) discount = 15;
+        else if (customer.equalsIgnoreCase("Child")) discount = 30;
+
+        
+        if (time.equalsIgnoreCase("Matinee") ||
+            customer.equalsIgnoreCase("Senior") ||
+            customer.equalsIgnoreCase("Student") ||
+            customer.equalsIgnoreCase("Child")) {
+            voucher = "Yes";
+        }
+
+        
+        double baseWithSurcharges = basePrice + formatFee + seatFee;
+
+        double adjustedPrice =
+                baseWithSurcharges * (1 + timeAdjustment / 100.0);
+
+        double finalPrice =
+                adjustedPrice * (1 - discount / 100.0);
+
+        
+        if (finalPrice < 10) category = "Value";
+        else if (finalPrice < 20) category = "Standard";
+        else if (finalPrice < 30) category = "Premium";
+        else category = "Luxury";
+
+    
+        System.out.println("Movie Format: " + format);
+        System.out.println("Show Time: " + time);
+        System.out.println("Seat Category: " + seat);
+        System.out.println("Customer Type: " + customer);
+        System.out.println("Base Ticket Price: $" + basePrice);
+        System.out.println("Format Surcharge: $" + formatFee);
+        System.out.println("Seat Upgrade Fee: $" + seatFee);
+        System.out.println("Time-Based Adjustment: " + timeAdjustment + "%");
+        System.out.println("Customer Discount: " + discount + "%");
+        System.out.println("Final Ticket Price: $" +
+                String.format("%.2f", finalPrice));
+        System.out.println("Concession Voucher: " + voucher);
+        System.out.println("Pricing Category: " + category);
+    }
+}
