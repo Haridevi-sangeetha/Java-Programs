@@ -1,0 +1,110 @@
+import java.util.Scanner;
+
+class CloudStorage {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int storageGB = sc.nextInt();
+        int users = sc.nextInt();
+        sc.nextLine();
+
+        String backup = sc.nextLine();
+        String support = sc.nextLine();
+
+        double baseCost = 0;
+        double userFee = 0;
+        double backupPremium = 0;
+        double supportFee = 0;
+
+        
+
+        if (storageGB <= 100) {
+            baseCost = storageGB * 0.05;
+        }
+        else if (storageGB <= 500) {
+            baseCost = (100 * 0.05) +
+                       (storageGB - 100) * 0.04;
+        }
+        else if (storageGB <= 2000) {
+            baseCost = (100 * 0.05) +
+                       (400 * 0.04) +
+                       (storageGB - 500) * 0.03;
+        }
+        else {
+            baseCost = (100 * 0.05) +
+                       (400 * 0.04) +
+                       (1500 * 0.03) +
+                       (storageGB - 2000) * 0.02;
+        }
+
+
+        if (users <= 10)
+            userFee = users * 5;
+        else if (users <= 50)
+            userFee = users * 4;
+        else
+            userFee = users * 3;
+
+
+        if (backup.equalsIgnoreCase("Daily")) {
+            backupPremium = 0;
+        }
+        else if (backup.equalsIgnoreCase("Hourly")) {
+            backupPremium = 15 + (0.5 * users);
+        }
+        else if (backup.equalsIgnoreCase("Real-Time")) {
+            backupPremium = 50 + (1.0 * users);
+        }
+
+
+        if (support.equalsIgnoreCase("Community"))
+            supportFee = 0;
+        else if (support.equalsIgnoreCase("Standard"))
+            supportFee = 20;
+        else if (support.equalsIgnoreCase("Priority"))
+            supportFee = 75;
+        else if (support.equalsIgnoreCase("Enterprise"))
+            supportFee = 200;
+
+
+        double monthly = baseCost + userFee + backupPremium + supportFee;
+        double annual = monthly * 12 * 0.9;  
+
+    
+
+        String plan;
+        String features;
+
+        if (users == 1) {
+            plan = "Personal";
+            features = "Basic storage, file sync";
+        }
+        else if (users <= 20) {
+            plan = "Team";
+            features = "Version history, file sharing, basic analytics";
+        }
+        else if (users <= 100) {
+            plan = "Business";
+            features = "Advanced sharing, team analytics, priority support";
+        }
+        else {
+            plan = "Enterprise";
+            features = "Advanced security, compliance tools, dedicated support, API access";
+        }
+
+
+        System.out.println("Storage Capacity: " + storageGB + " GB");
+        System.out.println("User Count: " + users);
+        System.out.println("Backup Frequency: " + backup);
+        System.out.println("Support Tier: " + support);
+        System.out.println("Base Storage Cost: $" + baseCost);
+        System.out.println("Per-User Fee: $" + userFee);
+        System.out.println("Backup Premium: $" + backupPremium);
+        System.out.println("Support Fee: $" + supportFee);
+        System.out.println("Monthly Subscription: $" + monthly);
+        System.out.println("Annual Subscription: $" +String.format("%.1f", annual) + " (save 10%)");
+        System.out.println("Recommended Plan: " + plan);
+        System.out.println("Included Features: " + features);
+    }
+}
