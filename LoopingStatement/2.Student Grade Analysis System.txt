@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+class GradeAnalysis{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int sum =0,P_count = 0,F_count=0;
+        int max = 0;
+        for(int i=0;i<N;i++){
+            String Name = sc.next();
+            int Score = sc.nextInt();
+            char Grade;
+            if(Score>=85 && Score<=100){
+                Grade = 'A';
+            }
+            else if(Score>=70 && Score<=84){
+                Grade = 'B';
+            }
+            else if(Score>=60 && Score<=69){
+                Grade = 'C';
+            }
+            else if(Score>=50 && Score<=59){
+                Grade = 'D';
+            }
+            else {
+                Grade = 'F';
+            }
+
+            String status;
+            if(Score>=60){
+                status = "Pass";
+            }
+            else{
+                status = "Fail";
+            }
+            if(status=="Pass"){
+                P_count++;
+            }
+            else{
+                F_count++;
+            }
+            sum = sum+Score;
+            if(Score>max){
+                max = Score;
+            }
+
+            System.out.println();
+
+            System.out.println("Student: "+Name);
+            System.out.println("Score: "+Score);
+            System.out.println("Letter Grade: "+Grade);
+            System.out.println("Status: "+status);
+        }
+        System.out.println();
+        System.out.println("Total Students: "+N);
+        double avg = (double)sum/(double)N;
+        System.out.printf("Class Average: "+"%.2f%n",avg);
+        System.out.println("Highest Score: "+max);
+        System.out.println("Student Passed: "+P_count);
+        System.out.println("Student Failed: "+F_count);
+    }
+}
