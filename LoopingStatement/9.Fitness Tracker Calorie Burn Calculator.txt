@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class FitnessTracker {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+
+        int totalDuration = 0;
+        int totalCalories = 0;
+
+        for (int i = 1; i <= N; i++) {
+            String exercise = sc.next();
+            int duration = sc.nextInt();
+            int caloriesPerMinute = 0;
+            String intensity = "";
+
+            if (exercise.equals("Running")) {
+                caloriesPerMinute = 10;
+                intensity = "High";
+            } else if (exercise.equals("Swimming")) {
+                caloriesPerMinute = 12;
+                intensity = "High";
+            } else if (exercise.equals("Cycling")) {
+                caloriesPerMinute = 8;
+                intensity = "Moderate";
+            } else if (exercise.equals("Gym")) {
+                caloriesPerMinute = 7;
+                intensity = "Moderate";
+            } else if (exercise.equals("Walking")) {
+                caloriesPerMinute = 4;
+                intensity = "Low";
+            }
+
+            int calories = caloriesPerMinute * duration;
+            totalDuration += duration;
+            totalCalories += calories;
+
+            System.out.println("Session " + i + ": " + exercise);
+            System.out.println("Duration: " + duration + " minutes");
+            System.out.println("Calories Burned: " + calories);
+            System.out.println("Intensity: " + intensity);
+            System.out.println();
+        }
+
+        double average = (double) totalCalories / N;
+        String fitnessLevel;
+
+        if (totalCalories < 300) {
+            fitnessLevel = "Beginner";
+        } else if (totalCalories <= 1000) {
+            fitnessLevel = "Intermediate";
+        } else {
+            fitnessLevel = "Advanced";
+        }
+
+        System.out.println("Total Workouts: " + N);
+        System.out.println("Total Duration: " + totalDuration + " minutes");
+        System.out.println("Total Calories Burned: " + totalCalories);
+        System.out.println("Average Calories per Session: " + Math.round(average * 100.0) / 100.0);
+        System.out.println("Fitness Level: " + fitnessLevel);
+    }
+}
