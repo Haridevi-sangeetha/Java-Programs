@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+class BloodDonatio{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int N=sc.nextInt();
+        int E_count=0;
+        int N_count=0;
+        for(int i=1;i<=N;i++){
+            String Name = sc.next();
+            int age = sc.nextInt();
+            double weight = sc.nextDouble();
+            double Hemoglovin = sc.nextDouble();
+            String Status = "XYz";
+            String Reason = "XyZ";
+            if(weight>=50 && (age>=18 && age<=65) && Hemoglovin>=12.5){
+                Status = "Eligible";
+            }
+            else if(weight<50 && (age>=18 && age<=65) && Hemoglovin>=12.5){
+                Status = "Not Eligible";
+                Reason = "Weight Less than 50 kg";   
+            }
+            else if(age<18 && weight>=50 && Hemoglovin>=12.5){
+                Status = "Not Eligible";
+                Reason = "Age is Below 18 Years";
+            }
+            else if(age>65 && weight>=50 && Hemoglovin>=12.5){
+                Status = "Not Eligible";
+                Reason = "Age above 65 Years"; 
+            }
+            else if(weight<50 && (age>=18 && age<=65) && Hemoglovin<12.5){
+                Status = "Not Eligible";
+                Reason = "Hemoglobin below 12.5 g/dl";    
+            }
+            System.out.println();
+            System.out.println("Donor: "+Name);
+            System.out.println("Age: "+age+" years");
+            System.out.println("Weight : "+weight+" kg");
+            System.out.println("Hemiglobin : "+Hemoglovin +" g/dL");
+            if(Status.equals("Eligible")){
+                System.out.println("Status: "+Status);
+                E_count++;
+            }
+            else{
+                System.out.println("Status: "+Status);
+                System.out.println("Reason: "+Reason);
+                N_count++;
+            }
+        }
+        System.out.println();
+        System.out.println("Total Donors : "+N);
+        System.out.println("Eligile Donors: "+E_count);
+        System.out.println("Rejectd Donors :"+N_count);
+        double D_rate =((E_count)*100)/N;
+        System.out.printf("Eligibility Rate : "+D_rate);
+        System.out.print("%");
+    }
+}
