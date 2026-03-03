@@ -1,0 +1,65 @@
+import java.util.Scanner;
+
+class BookFine {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int N = sc.nextInt();
+
+        double totalFines = 0;
+        int overdueCount = 0;
+
+        for (int i = 1; i <= N; i++) {
+
+            String bookType = sc.next();
+            int daysLate = sc.nextInt();
+
+            double dailyFine = 0;
+            double maxCap = 0;
+
+        
+            if (bookType.equals("Regular")) {
+                dailyFine = 0.5;
+                maxCap = 10;
+            } else if (bookType.equals("Reference")) {
+                dailyFine = 1.0;
+                maxCap = 20;
+            } else if (bookType.equals("Magazine")) {
+                dailyFine = 0.25;
+                maxCap = 5;
+            }
+
+            double calculatedFine = daysLate * dailyFine;
+            double actualFine = calculatedFine;
+            boolean capApplied = false;
+
+            if (calculatedFine > maxCap) {
+                actualFine = maxCap;
+                capApplied = true;
+            }
+
+            if (daysLate > 0) {
+                overdueCount++;
+            }
+
+            totalFines += actualFine;
+
+            System.out.println("Book " + i + ": " + bookType);
+            System.out.println("Days Late: " + daysLate);
+            System.out.println("Daily Fine: $" + dailyFine);
+            System.out.println("Calculated Fine: $" + calculatedFine);
+            System.out.println("Actual Fine: $" + actualFine);
+            System.out.println("Cap Applied: " + (capApplied ? "Yes" : "No"));
+            System.out.println();
+        }
+
+        double averageFine = totalFines/N ;
+
+        System.out.println("Total Books: " + N);
+        System.out.println("Total Fines Collected: $" + totalFines);
+        System.out.println("Books Overdue: " + overdueCount);
+        System.out.println("Average Fine: $" + String.format("%.2f", averageFine));
+
+
+    }
+}
