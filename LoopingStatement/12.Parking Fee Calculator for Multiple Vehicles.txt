@@ -1,0 +1,82 @@
+import java.util.Scanner;
+
+class FeeCalculator{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        double Final_Fee = 0.0;
+        int P_count=0;
+        for(int i=1;i<=N;i++){
+            String VehicleType = sc.next();
+            double HoursParked = sc.nextDouble();
+            double HourseRate = 0;
+            if(VehicleType.equals("Car")){
+                HourseRate=3.0;
+            }
+            else if(VehicleType.equals("Motorcycle")){
+                HourseRate=2.0;
+            }
+            else if(VehicleType.equals("Truck")){
+                HourseRate=5.0;
+            }
+            else if(VehicleType.equals("Bus")){
+                HourseRate=7.0;
+            }
+            double Parking_Fee = HoursParked*HourseRate;
+            String Daily_Cap = "XYZ";
+            double Cap_fee=0.0;
+            if(VehicleType.equals("Car")){
+                if(Parking_Fee>30){
+                    Daily_Cap="YES";
+                }
+                else{
+                    Daily_Cap="NO";
+                }
+                Cap_fee=30;
+            }
+             if(VehicleType.equals("Motorcycle")){
+                if(Parking_Fee>20){
+                    Daily_Cap="YES";
+                }
+                else{
+                    Daily_Cap="NO";
+                }
+                Cap_fee=20;
+            }
+             if(VehicleType.equals("Truck")){
+                if(Parking_Fee>60){
+                    Daily_Cap="YES";
+                }
+                else{
+                    Daily_Cap="NO";
+                }
+                Cap_fee=60;
+            }
+             if(VehicleType.equals("Bus")){
+                if(Parking_Fee>100){
+                    Daily_Cap="YES";
+                }
+                else{
+                    Daily_Cap="NO";
+                }
+                Cap_fee=100;
+            }
+            if(HoursParked>8){
+                P_count++;
+            }
+            Final_Fee = Final_Fee+Parking_Fee;
+            System.out.println();
+            System.out.println("Vehicle "+i+":"+VehicleType);
+            System.out.println("Hours Parked : " + HoursParked);
+            System.out.println("Hourly Rate : $"+HourseRate);
+            System.out.println("Parking Fee : $"+Parking_Fee);
+            System.out.println("Cap Applied : "+Daily_Cap);
+        }
+        double Avg = Final_Fee/N;
+        System.out.println();
+        System.out.println("Total Vehicles:"+N);
+        System.out.println("Total Revenue: $"+Final_Fee);
+        System.out.printf("Average Fee: $"+"%.2f%n",Avg);
+        System.out.println("Peak Hour Vehicles (>8 Hours): "+P_count);
+    }
+}
