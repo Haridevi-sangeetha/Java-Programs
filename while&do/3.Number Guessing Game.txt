@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+class NumberGuessing{
+    public static void main(String [] args){
+        Scanner sc=new Scanner(System.in);
+        int Org_num=sc.nextInt();
+        int count=0;
+        while(true){
+            System.out.print("Guess the number (1100) : ");
+            int inp = sc.nextInt();
+            count++;
+            if(Org_num==inp){
+                System.out.println("Correct! Attemps : "+count);
+                break;
+            }if(inp>Org_num){
+                System.out.println("Too high!");
+            }
+            else if(inp<Org_num){
+                System.out.println("Too Low");
+            }
+        }
+    }
+}
