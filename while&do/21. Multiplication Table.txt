@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+class Table{
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int upto = sc.nextInt();
+        int i=1;
+        System.out.println("Multiplication table of "+num);
+        while(i<=upto){
+            System.out.println(num+" x "+i+" = "+num*i);
+            i++;
+        }
+    }
+}
