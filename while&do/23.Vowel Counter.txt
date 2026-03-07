@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+class VowelCounter{
+    public static void main (String [] args){
+        Scanner sc = new Scanner(System.in);
+        String S = sc.nextLine();
+        int len = S.length();
+        // System.out.println(len);
+        int i=0;
+        int count=0;
+        do{
+            if((S.charAt(i)=='A' || S.charAt(i)=='E' || S.charAt(i)=='I'|| S.charAt(i)=='O' || S.charAt(i)=='U')||
+            (S.charAt(i)=='a' || S.charAt(i)=='e' || S.charAt(i)=='o' || S.charAt(i)=='u' || S.charAt(i)=='i')){
+                count++;
+            }
+            i++;
+        }while(i<len);
+        System.out.println("Vowel count : "+count);
+    }
+}
