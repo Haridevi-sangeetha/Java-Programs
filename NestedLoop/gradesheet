@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+class gradeSheet{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int student = sc.nextInt();
+        int subject = sc.nextInt();
+        
+        String [] name = new String[student];
+        int [][] marks = new int[student][subject];
+        
+        int sum;
+        
+        for(int i=0;i<student;i++){
+            name[i]=sc.next();
+            for(int j=0;j<subject;j++){
+                marks[i][j]=sc.nextInt();
+            }
+        }
+        System.out.println("Grade Sheet : ");
+        System.out.print("Student ");
+        for(int i=1;i<=subject;i++){
+            System.out.print("Sub"+i+" ");
+        }
+        System.out.print("Average");
+        System.out.println();
+        for(int i=0;i<student;i++){
+            sum =0;
+            System.out.print(name[i] + " ");
+            for(int j=0;j<subject;j++){
+                System.out.print(marks[i][j]+" ");
+                sum = sum+marks[i][j];
+            }
+            double avg = (double)sum/(double)subject;
+            System.out.printf("%.2f%n",avg);
+        }
+    }
+}
