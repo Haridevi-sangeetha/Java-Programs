@@ -13,4 +13,5 @@ class TheatreCollection{
         System.out.println("Net Profit : " + Profit);
 
     }
+
 }
