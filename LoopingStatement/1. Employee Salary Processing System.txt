@@ -41,4 +41,5 @@ class EmployeeSalary{
         double avg = sum/N;
         System.out.printf("Average Salary :$"+"%.2f",avg);
     }
+
 }
