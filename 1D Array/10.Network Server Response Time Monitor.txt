@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+class Response{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int servers = sc.nextInt();
+        int []time = new int[servers];
+        int Max = time[0];
+        int sum =0;
+        int Limit = 0;
+        for(int i=0;i<servers;i++){
+            time[i]=sc.nextInt();
+            if(time[i]>Max){
+                Max = time[i];
+            }
+            if(time[i]>200){
+                Limit++;
+            }
+            sum = sum+time[i];
+        }
+        int Min = time[0];
+        for(int i=0;i<servers;i++){
+            if(Min >time[i]){
+                Min = time[i];
+            }
+        }
+        double avg = ((double)sum/(double)servers);
+        
+        double Performance = ((double)(servers-Limit)/(double)servers)*100;
+        
+        System.out.println("Total Servers: "+servers);
+        System.out.println("Fastest Response: "+Min+"ms");
+        System.out.println("Slowest response: "+Max+"ms");
+        System.out.printf("Average Response: "+"%.2f",avg);
+        System.out.print("ms");
+        System.out.println("\nSlow Servers (>200ms): "+Limit);
+        System.out.printf("Performance Score: "+"%.2f",Performance);
+        System.out.print("%");
+        
+    }
+}
