@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+class  EmployeeSlary{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        double []arr = new double[size];
+        double sum =0.0;
+        for(int i=0;i<size;i++){
+            arr[i] = sc.nextDouble();
+            sum = sum+arr[i];
+        }
+        double avg = sum/(double)size;
+        int aboveAvg = 0;
+        for(int i=0;i<size;i++){
+            if(arr[i]>avg){
+                aboveAvg++;
+            }
+        }
+        System.out.println("Total Employees: "+size);
+        System.out.printf("Average Salary: "+"%.2f%n",avg);
+        System.out.println("Employees Above Average: "+aboveAvg);
+        
+        double percentage = ((double)aboveAvg/(double)size)*100;
+        System.out.printf("Percentage : "+"%.2f",percentage);
+        System.out.print("%");
+    }
+}
