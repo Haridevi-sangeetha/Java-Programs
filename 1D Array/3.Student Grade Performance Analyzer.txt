@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+class StudentGrade{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        int []marks = new int [size];
+        for(int i=0;i<size;i++){
+            marks[i] = sc.nextInt();
+        }
+        int H_Count = marks[0];
+        int L_Count = marks[0];
+        int F_Count = 0;
+        for(int i=0;i<size;i++){
+            if(marks[i]>H_Count){
+                H_Count = marks[i];
+            }
+            if(marks[i]<L_Count){
+                L_Count = marks[i];
+            }
+            if(marks[i]<40){
+                F_Count++;
+            }
+        }
+        System.out.println("Total Students : "+size);
+        System.out.println("Highest Score: "+H_Count);
+        System.out.println("Lowest Score: "+L_Count);
+        System.out.println("Failed Students: "+F_Count);
+        
+        int pass = size - F_Count;
+        
+        double Percentage = ((double)pass/(double)size)*100;
+        
+        System.out.printf("Pass Percentage: " + "%.2f",Percentage);
+        System.out.print("%");
+    }
+}
