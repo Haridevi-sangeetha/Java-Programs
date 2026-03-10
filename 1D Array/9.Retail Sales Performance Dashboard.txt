@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+class SalesPerformance{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int Stores = sc.nextInt();
+        double []sales = new double[Stores];
+        double Max = sales[0];
+        double sum = 0.0; 
+        for(int i=0;i<Stores;i++){
+            sales[i] = sc.nextDouble();
+            if(sales[i]>Max){
+                Max = sales[i];
+            }
+            sum = sum+sales[i];
+        }
+        double Min = sales[0];
+        for(int i=0;i<Stores;i++){
+            if(sales[i]<Min){
+                Min = sales[i];
+            }
+        }
+        double avg = sum/(double)Stores;
+        
+        System.out.println("Total Sales: "+Stores);
+        System.out.printf("Highest Sales: $"+"%.2f%n",Max);
+        System.out.printf("Lowest Sales: $"+"%.2f%n",Min);
+        System.out.printf("Total Sales: $"+"%.2f%n",sum);
+        System.out.printf("Average Sales: $"+"%.2f%n",avg);
+    }
+}
