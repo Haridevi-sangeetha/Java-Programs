@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+class DailyTemperature{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int Reading = sc.nextInt();
+        double []Temperature = new double[Reading];
+        for(int i=0;i<Reading;i++){
+            Temperature[i] = sc.nextDouble();
+        }
+        double Max = Temperature[0];
+        double Min = Temperature[0];
+        double sum = 0.0;
+        for(int i=0;i<Reading;i++){
+            if(Temperature[i]>Max){
+                Max = Temperature[i];
+            }
+            if(Temperature[i]<Min){
+                Min = Temperature[i];
+            }
+            sum = sum+Temperature[i];
+        }
+        double Range = Max - Min;
+        System.out.println("Sum "+sum);
+        double avg = (sum/Reading);
+        
+        System.out.println("Number of Readings: "+Reading);
+        System.out.printf("Maximum Temperature: "+"%.2f",Max);
+        System.out.printf("Minimum Temperature: "+"%.2f%n",Min);
+        System.out.printf("Temperature Range: "+"%.2f%n",Range);
+        System.out.printf("Average Temperature: "+"%.2f%n",avg);
+    }
+}
