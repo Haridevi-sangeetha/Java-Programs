@@ -1,0 +1,36 @@
+
+import java.util.Scanner;
+
+class InventoryStock{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        int Threshold = sc.nextInt();
+        int []Quantity = new int[size];
+        int []Low = new int[size];
+        for(int i=0;i<size;i++){
+            Quantity[i] = sc.nextInt();
+        }
+        int thresholdCount = 0;
+        for(int i=0;i<size;i++){
+            if(Quantity[i]<Threshold){
+                Low[thresholdCount] = i;
+                thresholdCount++;
+            }
+        }
+        
+        System.out.println("Total Products: "+size);
+        System.out.println("Minimum Threshold: "+Threshold);
+        System.out.println("Low Stock Products: "+thresholdCount);
+        System.out.print("Product Indices: ");
+        System.out.print("[");
+        for(int i=0;i<thresholdCount;i++){
+            System.out.print(Low[i]);
+            if(i<thresholdCount-1){
+                System.out.print(",");
+            }
+        }
+        System.out.print("]");
+        
+    }
+}
