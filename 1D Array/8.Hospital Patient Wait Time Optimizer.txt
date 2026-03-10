@@ -1,0 +1,34 @@
+
+import java.util.Scanner;
+
+class WaitngOptimizer{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int Patient =sc.nextInt();
+        int []time = new int[Patient];
+        int Max = time[0];
+        int sum = 0;
+        int Limit = 0;
+        for(int i=0;i<Patient;i++){
+            time[i] = sc.nextInt();
+            sum = sum+time[i];
+            if(time[i]>Max){
+                Max = time[i];
+            }
+            if(time[i]>60){
+                Limit++;
+            }
+        }
+        double avg = ((double)sum/(double)Patient);
+        double service = ((double)(Patient-Limit)/(double)Patient)*100;
+        
+        System.out.println("Total Patients: "+Patient);
+        System.out.println("Longest Wait Time: "+Max+" minutes");
+        System.out.printf("Average Wait Time: "+"%.2f",avg);
+        System.out.print(" minutes");
+        System.out.println("\nPatient Waiting>60 min: "+Limit);
+        System.out.printf("Service Level: "+"%.2f",service);
+        System.out.print("%");
+        
+    }
+}
