@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+class SeatingPlan{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int row = sc.nextInt();
+        int col = sc.nextInt();
+        int students = sc.nextInt();
+        int n=1;
+        int count=1;
+        for(int i=1;i<(row*col);i++){
+            for(int j=1;j<=col;j++){
+                if((i+j)%2==0&&count<students){
+                    System.out.print("S"+"00"+n++);
+                    count++;
+                }
+                else{
+                    System.out.print("----");
+                }
+            }
+            System.out.println();
+        }
+        System.out.println("Total Seats :"+(row*col));
+        System.out.println("Occupied Seats: "+students);
+        System.out.println("Empty Seats: "+((row*col)-students));
+    }
+}
