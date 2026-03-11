@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+class StarRating{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+         
+        String [] name = new String[num];
+        double [] Rating = new double[num];
+
+        for(int i=0;i<num;i++){
+            name[i]=sc.next();
+            Rating[i]=sc.nextDouble();
+        }
+        double sum=0.0;
+        for(int i=0;i<num;i++){
+            System.out.print(name[i]+" ");
+            if(Rating[i]>=1.0 && Rating[i]<2.0){
+                System.out.print(Rating[i]+" ");
+                System.out.println("⭐");
+            }
+            else if(Rating[i]>=2.0 && Rating[i]<3.0){
+                System.out.print(Rating[i]+" ");
+                System.out.println("⭐⭐");
+            }
+            else if(Rating[i]>=3.0 && Rating[i]<4.0){
+                System.out.print(Rating[i]+" ");
+                System.out.println("⭐⭐⭐");
+            }
+            else if(Rating[i]>=4.0 && Rating[i]<5.0){
+                System.out.print(Rating[i]+" ");
+                System.out.println("⭐⭐⭐⭐");
+            }
+            else if(Rating[i]>=5.0 && Rating[i]<6.0){
+                System.out.print(Rating[i]+" ");
+                System.out.println("⭐⭐⭐⭐⭐");
+            }
+            sum=sum+Rating[i];
+        }
+        double avg = sum/(double)num;
+
+        System.out.printf("Average Rating : "+"%.2f",avg);
+    } 
+}
