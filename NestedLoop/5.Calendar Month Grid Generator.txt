@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class CalendarGrid {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int daysInMonth = sc.nextInt();
+        int startDay = sc.nextInt();
+
+        System.out.println("Calendar Grid:");
+        System.out.println("Mon Tue Wed Thu Fri Sat Sun");
+
+        int date = 1;
+        int totalCells = (startDay - 1) + daysInMonth;
+        int weeks = (int) Math.ceil(totalCells / 7.0);
+
+        for (int i = 0; i < weeks; i++) {
+            for (int j = 1; j <= 7; j++) {
+                int cell = i * 7 + j;
+
+                if (cell < startDay || date > daysInMonth) {
+                    System.out.print(" ");
+                } else {
+                    System.out.print(date + " ");
+                    date++;
+                }
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
