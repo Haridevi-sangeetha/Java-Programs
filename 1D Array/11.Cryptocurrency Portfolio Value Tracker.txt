@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+class Portfolio{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        double []values = new double[size];
+        double []prices = new double[size];
+        for(int i=0;i<size;i++){
+            values[i] = sc.nextDouble();
+        }
+        for(int j=0;j<size;j++){
+            prices[j] = sc.nextDouble();
+        }
+        double sum = 0.0;
+        double Max = values[0]*prices[0];
+        double Min = values[0]*prices[0];
+        int M_Indices  = 0;
+        int Min_Indices = 0;
+        for(int i=0;i<size;i++){
+            if((values[i]*prices[i])>Max){
+                Max = values[i]*prices[i];
+                M_Indices ++;
+            }
+            if((values[i]*prices[i])<Min){
+                Min = values[i]*prices[i];
+                Min_Indices++;
+            }
+            sum = sum+(values[i]*prices[i]);
+        }
+        System.out.println("Number of Assets: "+size);
+        System.out.printf("Total Portfolio: $"+"%.2f%n",sum);
+        System.out.printf("Most Valuable Asset: "+(M_Indices+1)+" $"+"%.2f%n",Max);
+        System.out.printf("Least Valuable Asset: "+(Min_Indices+1)+" $"+"%.2f%n",Min);
+    }
+}
