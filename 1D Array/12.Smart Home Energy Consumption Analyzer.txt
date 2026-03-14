@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+class SmartHome{
+    public static void main(String [] ags){
+        Scanner sc = new Scanner(System.in);
+        int hours = sc.nextInt();
+        double []times = new double[hours];
+        double sum = 0.0;
+        double Peak = times[0];
+        int Peak_Indices = 0;
+        for(int i=0;i<hours;i++){
+            times[i] = sc.nextDouble();
+            sum = sum+(double)times[i];
+            if(times[i]>Peak){
+                Peak = times[i];
+                Peak_Indices = i;
+            }
+        }
+        double dailyLimit = sc.nextDouble();
+        double avg = sum/(double)hours;
+        String Limit;
+        double difference = 0.0;
+        System.out.println("Hours Monitored: "+hours);
+        System.out.printf("Total Daily Consumption: "+"%.2f",sum);
+        System.out.print("kWh");
+        System.out.printf("\nPeak Hour: "+ (Peak_Indices+1)+"("+"%.2f",Peak);
+        System.out.print(" wKh)");
+        System.out.printf("\nAverage Hoursly: "+"%.2f%n",avg);
+        System.out.printf("Daily Limit: "+"%.2f",dailyLimit);
+        System.out.print("kWh");
+        if(sum<dailyLimit){
+            System.out.println("\nStatus: Within Limit");
+        }
+        else if(sum>dailyLimit){
+            difference = sum - dailyLimit;
+            System.out.printf("\nStatus: Exceeded by"+"%.2f",difference+"kWh");
+        }
+        
+    }
+}
