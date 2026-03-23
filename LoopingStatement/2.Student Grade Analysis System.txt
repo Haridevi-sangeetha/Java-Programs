@@ -8,7 +8,7 @@ class GradeAnalysis{
         int max = 0;
         for(int i=0;i<N;i++){
             String Name = sc.next();
-            int Score = sc.nextInt();
+            int Score= sc.nextInt();
             char Grade;
             if(Score>=85 && Score<=100){
                 Grade = 'A';
