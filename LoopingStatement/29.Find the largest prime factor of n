@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Man{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        long num=sc.nextLong();
+        long Max=-1;
+        while(num%2==0){
+            Max=2;
+            num=num/2;
+        }
+        for(long i=3;i*i<=num;i+=2){
+            while(num%i==0){
+                Max=i;
+                num=num/i;
+            }
+        }
+        if(num>2){
+            Max=num;
+        }
+        
+        System.out.println(Max);
+    }
+}
