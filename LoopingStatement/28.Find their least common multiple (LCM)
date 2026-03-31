@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        long num1=sc.nextLong();
+        long num2=sc.nextLong();
+        long min=0;
+        if(num1<num2){
+            min=num1;
+        }
+        else{
+            min=num2;
+        }
+        long GCD=0;
+        for(long i=1;i<=min;i++){
+            if(num1%i==0 && num2%i==0){
+                GCD=i;
+            }
+        }
+        
+        long LCM = (num1*num2)/GCD;
+        System.out.println(LCM);
+        
+    }
+}
