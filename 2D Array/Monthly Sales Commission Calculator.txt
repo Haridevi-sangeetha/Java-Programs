@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+class SalesCommission{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int row = sc.nextInt();
+        int col = sc.nextInt();
+        int [][] Val = new int[row][col];
+
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                Val[i][j] = sc.nextInt();
+            }
+        } 
+        System.out.println("Sales Matrix: ");
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                System.out.print(Val[i][j]+" ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("Representative Matrix: ");
+        int Row_Sum ;
+        for(int i=0;i<row;i++){
+            Row_Sum = 0;
+            for(int j=0;j<col;j++){
+                Row_Sum=Row_Sum+Val[i][j];
+            }
+            System.out.println("Rep "+(i+1)+" : "+Row_Sum);
+        }
+
+        System.out.println("Territory Totals:");
+
+        int Col_Sum;
+        for(int j=0;j<col;j++){
+            Col_Sum=0;
+            for(int i=0;i<row;i++){
+                Col_Sum=Col_Sum+Val[i][j];
+            }
+            System.out.println("Territory Totals: "+(j+1)+" : "+Col_Sum);
+        }
+
+    }
+}
