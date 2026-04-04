@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+class FlowAnalysis{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int row = sc.nextInt();
+        int col = sc.nextInt();
+        int [][] Data = new int[row][col];
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                Data[i][j] = sc.nextInt();
+            }
+        } 
+        System.out.println("Traffic Data: ");
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                System.out.print(Data[i][j]+" ");
+            }
+            System.out.println("");
+        }
+        System.out.println("Total Traffic Per Lane: ");
+        int sum;
+        int Max = 0;
+        int index = 0;
+        for(int i=0;i<row;i++){
+            sum = 0;
+            for(int j=0;j<col;j++){
+                sum=sum+Data[i][j];
+            }
+            System.out.println("Lane "+(i+1)+" : "+sum);
+            if(Max<sum){
+                sum=Max;
+                index =i;
+            }
+        }
+        int sum1;
+        int Max2 = 0;
+        int Index2 = 0;
+        for(int j=0;j<col;j++){
+            sum1 = 0;
+            for(int i=0;i<row;i++){
+                sum1 = sum1+Data[i][j];
+            }
+            if(sum1>Max2){
+                Max2 = sum1;
+                Index2 = j;
+            }
+        }
+        System.out.println("Busiest Hour: Hour "+(Index2+1)+" with "+Max2+" vehicles");
+    }
+}
