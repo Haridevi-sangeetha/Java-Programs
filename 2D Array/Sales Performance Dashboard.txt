@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+class SalesPerformance{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int row = sc.nextInt();
+        int col = sc.nextInt();
+        int [][]Sales = new int[row][col];
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                Sales[i][j]=sc.nextInt();
+            }
+        }   
+        System.out.println("Sales Data : ");
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                System.out.print(Sales[i][j]+" ");
+            }
+            System.out.println();
+        }
+        System.out.println("Product-wise Total Sales : ");
+        int sum ;
+        int Max=0;
+        int index =0;
+        for(int i=0;i<row;i++){
+            sum=0;
+            for(int j=0;j<col;j++){
+                sum=sum+Sales[i][j];
+            }
+            if(Max<sum){
+                Max=sum;
+                index=(i+1);
+            }
+            System.out.println("Product "+(i+1)+": "+sum);
+        }
+        
+        System.out.println("Best-Selling Product: Product "+index+" with "+Max+" units");
+    }     
+}
