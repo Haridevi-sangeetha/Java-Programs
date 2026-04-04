@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+class TemperatureGrid{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int row = sc.nextInt();
+        int col = sc.nextInt();
+        int [][]Temperature = new int[row][col];
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                Temperature[i][j]=sc.nextInt();
+            }
+        }
+        System.out.println("Temperature Grid: ");
+        int Max = Temperature[0][0];
+        int Min = Temperature[0][0];
+        int index1 = 0;
+        int index2 = 0;
+        int index3 = 0;
+        int index4 = 0;
+        int sum = 0;
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                System.out.print(Temperature[i][j]+" ");
+                if(Max<Temperature[i][j]){
+                    Max=Temperature[i][j];
+                    index1 = i;
+                    index2 = j;
+                }
+                if(Min>Temperature[i][j]){
+                    Min = Temperature[i][j];
+                    index3 = i;
+                    index4 = j;
+                }
+                sum=sum+Temperature[i][j];
+            }
+            System.out.println("");
+        }
+        double avg = (double)sum/(double)(row*col);
+        System.out.println("Maximum Temperature: "+Max+"C at position ("+index1+", "+index2+")");
+        System.out.println("Minimum Temperature: "+Min+"C at position ("+index3+", "+index4+")");
+        System.out.printf("Average Temperature: "+"%.0fC%n",(avg*100));
+    }
+}
