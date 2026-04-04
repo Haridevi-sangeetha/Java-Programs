@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+class InventoryHeatmap{
+    public static void main(String [] args){
+        Scanner sc =new Scanner(System.in);
+        int row = sc.nextInt();
+        int col = sc.nextInt();
+        int [][] Inventory = new int[row][col];
+        int sum = 0;
+        int Max = 0;
+        int index1 = 0;
+        int index2 = 0;
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                Inventory[i][j]=sc.nextInt();
+                sum=sum+Inventory[i][j];
+                if(Max<Inventory[i][j]){
+                    Max=Inventory[i][j];
+                    index1=i;
+                    index2=j;
+                }
+            }
+        }
+        System.out.println("Inventory Grid: ");
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                System.out.print(Inventory[i][j]+" ");
+            }
+            System.out.println();
+        }
+        System.out.println("Total Inventory : "+sum);
+        System.out.println("Max Stock per Zone: Row "+index1+", Col "+index2+" ("+Max+" Units )");
+    }
+}
