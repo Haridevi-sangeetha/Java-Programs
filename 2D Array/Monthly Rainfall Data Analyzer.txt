@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+class DataAnalyzer{
+    public static void main (String [] args){
+        Scanner sc = new Scanner(System.in);
+        int [][] Data = new int[4][7];
+        for(int i=0;i<4;i++){
+            for(int j=0;j<7;j++){
+                Data[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println("RainFall Data: ");
+        for(int i=0;i<4;i++){
+            for(int j=0;j<7;j++){
+                if(Data[i][j]<10){
+                    System.out.print((Data[i][j]*10)+" ");
+                }
+                else{
+                    System.out.print(Data[i][j]+" ");
+                }
+            }
+            System.out.println();
+        }
+        System.out.println("Weekly Totals: ");
+
+        int sum ;
+        int Total_Sum = 0;
+        int Min = 0;
+        int index=0;
+        for(int i=0;i<4;i++){
+            sum=0;
+            for(int j=0;j<7;j++){
+                if(Data[i][j]<=10){
+                    sum = sum+(Data[i][j]*10);
+                }
+                else{
+                    sum = sum+Data[i][j];
+                }
+            }
+            if(sum<=Min){
+                Min=sum;
+                index=i;
+            }
+            System.out.println("Weel "+(i+1)+" : "+sum+" mm");
+            Total_Sum=Total_Sum+sum;
+            
+        }
+        System.out.println("Monthly Total: "+Total_Sum+" mm");
+        if(Min>0 || Min<0){
+            System.out.println("Driest Week : "+index+" ("+Min+" mm)");
+        }
+        else if(Min == 0){
+            System.out.println("Driest Week : Week "+(1+index));
+        }
+    }
+}
