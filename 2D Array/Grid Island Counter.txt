@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+class IslandCounter{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int row = sc.nextInt();
+        int col = sc.nextInt();
+        int [][]Val = new int[row][col];
+        int count=0;
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                Val[i][j] = sc.nextInt();
+                if(Val[i][j] == 1){
+                    count++;
+                }
+            }
+        } 
+        System.out.println("Map: ");
+        System.out.println("Number of Islands: "+count);
+    }
+}
