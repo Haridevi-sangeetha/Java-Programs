@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+class EmailValidator{
+    public static void main(String  [] args){
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        String []str=new String[size];
+
+        for(int i=0;i<size;i++){
+            str[i]=sc.next();
+        }
+        int VailCount=0;
+        int InvalidCount=0;
+        for(int i=0;i<size;i++){
+            int SpecialCount=0;
+            int DotCount=0;
+            int len=str[i].length();
+            for(int j=0;j<len;j++){
+              char letter = str[i].charAt(j);
+              if(letter=='@' && ((str[i].charAt(0)!='@')&&(str[i].charAt(0)!='.'))&&((str[i].charAt(len-1)!='@')&&(str[i].charAt(len-1)!='.'))){
+                SpecialCount++;
+              }  
+              if(letter=='.'){
+                DotCount++;
+              }
+            }
+            if(SpecialCount>=1 && DotCount>=1){
+                System.out.println(str[i]+" - Valid");
+                VailCount++;
+            }
+            else{
+                System.out.println(str[i]+" - Invalid");
+                InvalidCount++;
+            }
+        }
+        System.out.println("Total Valid : "+VailCount);
+        System.out.println("Total Invalid : "+InvalidCount);
+
+    }
+}
