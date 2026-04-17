@@ -1,0 +1,38 @@
+import java.util.*;
+
+public class Main{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int num1 = num;
+        int rev= 0;
+        while(num!=0){
+            int temp = num%10;
+            rev= (rev*10)+temp;
+            num/=10;
+        }
+        int val1  = num1*num1;
+        int val2 = rev*rev ;
+        int rev1=0;
+        int rev2 = 0;
+        
+        while(val1 !=0 ){
+            int temp = val1%10;
+            rev1 = (rev1*10)+temp;
+            val1/=10;
+        }
+        while(val2 !=0 ){
+            int temp = val2%10;
+            rev2 = (rev2*10)+temp;
+            val2/=10;
+        }
+        // System.out.println(num1*num1 +" "+rev*rev);
+        // System.out.println(rev1 +" "+ rev2);
+        if(rev2 == num1*num1 && rev1 == rev*rev){
+            System.out.println("Yes");
+        }
+        else{
+            System.out.println("No");
+        }
+    }
+}
