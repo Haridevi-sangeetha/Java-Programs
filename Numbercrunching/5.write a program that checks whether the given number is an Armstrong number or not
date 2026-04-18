@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String [] args){
+        Scanner sc= new Scanner(System.in);
+        int num = sc.nextInt();
+        int og = num;
+        int num1 = num;
+        int count=0;
+        while(num1 != 0){
+            count = count+1;
+            num1/=10;
+        }
+        int sum =0;
+        while(num != 0){
+            int temp = num%10;
+            int product = temp;
+            for(int i=1;i<count;i++){
+            product = product*temp; 
+            }
+            sum = sum+product;
+            num /=10;
+        }
+        if(og == sum){
+            System.out.println("Yes");
+        }
+        else{
+            System.out.println("No");
+        }
+    }
+}
