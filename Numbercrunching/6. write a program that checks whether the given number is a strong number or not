@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class Main{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int num =sc.nextInt();
+        int og = num;
+        int sum =0;
+        while(num != 0){
+            int temp = num%10;
+            int val = 1;
+            for(int i=1;i<=temp;i++){
+                val = val*i;
+            }
+            sum = sum+val;
+            num /=10;
+        }
+        if(og == sum){
+            System.out.println("Yes");
+        }
+        else{
+            System.out.println("No");
+        }
+    }
+}
