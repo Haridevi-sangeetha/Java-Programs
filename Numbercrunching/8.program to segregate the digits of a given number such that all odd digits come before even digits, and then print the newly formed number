@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args){
+
+        Scanner sc = new Scanner(System.in);
+
+        String num = sc.next();
+
+        String Even = "";
+        String Odd = "";
+
+        for(int i=0; i<num.length(); i++){
+
+            char ch = num.charAt(i);
+
+            int digit = ch - '0';
+
+            if(digit % 2 == 0){
+                Even += ch;
+            }
+            else{
+                Odd += ch;
+            }
+        }
+
+        System.out.println(Odd + Even);
+    }
+}
