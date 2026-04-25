@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String num = sc.nextLine();
+
+        // Remove country code if length is greater than 10
+        if (num.length() > 10) {
+            num = num.substring(num.length() - 10);
+        }
+
+        // Split into two halves
+        int mid = num.length() / 2;
+
+        String firstHalf = num.substring(0, mid);
+        String secondHalf = num.substring(mid);
+
+        // Swap halves
+        String result = secondHalf + firstHalf;
+
+        System.out.println(result);
+
+        sc.close();
+    }
+}
