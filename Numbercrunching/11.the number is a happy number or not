@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class Main{
+    public static void main(String [] args){
+        Scanner sc = new Scanner (System.in);
+        long n = sc.nextInt();
+        while(n>=10){
+            long sum =0;
+            while(n!=0){
+                long temp = n%10;
+                sum = sum+(temp*temp);
+                n/=10;
+            }
+            n=sum;
+        }
+        if(n==1){
+            System.out.println("Yes");
+        }
+        else{
+            System.out.println("No");
+        }
+    }
+}
