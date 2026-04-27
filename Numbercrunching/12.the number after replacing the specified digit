@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Main{
+    public static void main(String [] args){
+        Scanner sc = new Scanner (System.in);
+        long n = sc.nextLong();
+        int og = sc.nextInt();
+        int re = sc.nextInt();
+        long rev = 0;
+        while(n!=0){
+            long temp = n%10;
+            if(temp == og){
+                rev = (rev*10)+re;
+            }
+            else {
+                rev = (rev*10)+temp;
+            }
+            n/=10;
+        }
+        long res = 0;
+        while(rev !=0){
+            long temp = rev%10;
+            res = (res*10)+temp;
+            rev/=10;
+        }
+        
+        System.out.println(res);
+    }
+}
