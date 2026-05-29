@@ -1,0 +1,38 @@
+import java.util.*;
+
+
+class ArithmeticOperators{
+    public static int add(int a, int b){
+        int add = a+b;
+        return add;
+    } 
+    public static int sub(int a, int b){
+        int sub = a-b;
+        return sub;
+    }
+    public static int mul(int a, int b){
+        int mul = a*b;
+        return mul;
+    }
+    public static int mod (int a,int b){
+        int mod = a%b;
+        return mod;
+    }
+    public static float div(int a,int b){
+        int div = a/b;
+        return div;
+    }
+} 
+
+public class Main{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        System.out.println(ArithmeticOperators.add(a,b));
+        System.out.println(ArithmeticOperators.sub(a,b));
+        System.out.println(ArithmeticOperators.mul(a,b));
+        System.out.println(ArithmeticOperators.mod(a,b));
+        System.out.println(ArithmeticOperators.div(a,b));
+    }
+}
