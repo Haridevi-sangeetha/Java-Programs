@@ -1,0 +1,21 @@
+
+public class Main{
+    public static void main(String [] args){
+        
+        Students s1 = new Students();
+        s1.setName("Haridevi");
+        System.out.println(s1.getName());
+    }
+}
+
+public class Students{
+    private String Name;
+    
+    public  String getName(){
+        return Name;
+    }
+    public String setName(String newName){
+        this.Name = newName;
+        return this.Name;
+    }
+}
